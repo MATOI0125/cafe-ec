@@ -39,7 +39,7 @@ export default function Home() {
                     변산바람꽃에서 느껴보세요
                   </h2>
                   <p className="text-lg md:text-xl korean-sans opacity-90 max-w-xl mx-auto leading-relaxed drop-shadow-md">
-                    Nature's gift of rest, experience it at Byeonsan Wind Flower
+                    Nature&apos;s gift of rest, experience it at Byeonsan Wind Flower
                   </p>
                 </div>
               </div>
