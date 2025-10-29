@@ -72,11 +72,11 @@ const productData = {
   },
 };
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
+export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
   const { addItem } = useCart();
   const [qty, setQty] = useState(1);
-  const { id } = params;
+  const { id } = use(params);
   const product = productData[id as keyof typeof productData];
 
   if (!product) {
