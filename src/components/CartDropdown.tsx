@@ -44,7 +44,7 @@ export default function CartDropdown() {
             <div className="p-4 text-center text-korean-light">장바구니가 비어 있습니다</div>
           ) : (
             <ul className="max-h-64 overflow-y-auto divide-y">
-              {items.map((item) => (
+              {items.map((item: { id: string; name?: string; price?: number; image?: string; quantity?: number }) => (
                 <li key={item.id} className="flex items-center space-x-3 p-3">
                   <div className="w-14 h-14 rounded bg-korean-warm flex items-center justify-center overflow-hidden">
                     {item.image ? (

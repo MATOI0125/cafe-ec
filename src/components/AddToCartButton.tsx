@@ -2,14 +2,9 @@
 import React, { useState } from 'react';
 import { useCart } from "@/context/CartContext";
 
+import type { CartItem } from "@/context/CartContext";
 type Props = {
-  item: {
-    id: string;
-    name?: string;
-    price?: number;
-    image?: string;
-    [key: string]: any;
-  };
+  item: CartItem;
   qty?: number;
   className?: string;
 };
