@@ -23,11 +23,15 @@ export default function Footer() {
             <div className="korean-sans text-korean-light space-y-2">
               <p className="flex items-center justify-center">
                 <span className="mr-2">📍</span>
-                전북 부안군 변산면 바람꽃길 123
+                스테이 변산바람꽃
+              </p>
+              <p className="flex items-center justify-center">
+                <span className="mr-2">📍</span>
+                ６−７ Jakdang-gil, Jinseo-myeon, Buan-gun, Jeonbuk State
               </p>
               <p className="flex items-center justify-center">
                 <span className="mr-2">📞</span>
-                063-123-4567
+                +82 10-9584-1559
               </p>
               <p className="flex items-center justify-center">
                 <span className="mr-2">📧</span>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ImageCarousel from '@/components/ImageCarousel';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -21,13 +22,13 @@ export default function Story() {
                 </p>
               </div>
 
-              {/* Main Story Image */}
-              <div className="image-placeholder rounded-3xl mb-12 h-[60vh]">
-                <div className="text-center">
-                  <p className="text-lg mb-2">📸 Story Hero Image</p>
-                  <p className="text-sm opacity-70">카페 창립자 또는 카페 전경</p>
-                  <p className="text-xs mt-2 opacity-50">1920x1080 recommended</p>
-                </div>
+              {/* Main Story Carousel */}
+              <div className="rounded-3xl mb-12 overflow-hidden h-[60vh] relative">
+                <ImageCarousel
+                  images={["/images/hero/story1.png", "/images/hero/story2.png", "/images/hero/story3.png"]}
+                  interval={5000}
+                  height="h-[60vh]"
+                />
               </div>
             </div>
           </div>
@@ -57,20 +58,26 @@ export default function Story() {
                     </p>
                   </div>
                 </div>
-                <div className="image-placeholder rounded-2xl h-80">
-                  <div className="text-center">
-                    <p className="text-sm">📸 Beginning Image</p>
-                    <p className="text-xs opacity-70">카페 시작 당시 모습</p>
-                  </div>
+                <div className="rounded-2xl h-80 overflow-hidden relative">
+                  <Image
+                    src="/images/gallery/FV2.png"
+                    alt="Beginning Image"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-                <div className="image-placeholder rounded-2xl h-80 md:order-1">
-                  <div className="text-center">
-                    <p className="text-sm">📸 Philosophy Image</p>
-                    <p className="text-xs opacity-70">카페 철학을 보여주는 이미지</p>
-                  </div>
+                <div className="rounded-2xl h-80 overflow-hidden relative md:order-1">
+                  <Image
+                    src="/images/hero/feature-coffee2.jpg"
+                    alt="Philosophy Image"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
                 <div className="md:order-2">
                   <h2 className="text-3xl korean-serif font-medium text-korean-accent mb-6">
@@ -111,11 +118,14 @@ export default function Story() {
 
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="calm-card p-8 rounded-2xl text-center">
-                  <div className="image-placeholder rounded-xl mb-6 h-48">
-                    <div className="text-center">
-                      <p className="text-sm">📸 Value 1</p>
-                      <p className="text-xs opacity-70">자연과의 조화</p>
-                    </div>
+                  <div className="rounded-xl mb-6 h-48 overflow-hidden relative">
+                    <Image
+                      src="/images/gallery/FV4.png"
+                      alt="Value 1"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <h3 className="text-xl korean-serif font-medium text-korean-accent mb-4">
                     자연과의 조화
@@ -127,11 +137,14 @@ export default function Story() {
                 </div>
 
                 <div className="calm-card p-8 rounded-2xl text-center">
-                  <div className="image-placeholder rounded-xl mb-6 h-48">
-                    <div className="text-center">
-                      <p className="text-sm">📸 Value 2</p>
-                      <p className="text-xs opacity-70">정성과 품질</p>
-                    </div>
+                  <div className="rounded-xl mb-6 h-48 overflow-hidden relative">
+                    <Image
+                      src="/images/hero/feature-coffee.jpg"
+                      alt="Value 2"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <h3 className="text-xl korean-serif font-medium text-korean-accent mb-4">
                     정성과 품질
@@ -143,11 +156,14 @@ export default function Story() {
                 </div>
 
                 <div className="calm-card p-8 rounded-2xl text-center">
-                  <div className="image-placeholder rounded-xl mb-6 h-48">
-                    <div className="text-center">
-                      <p className="text-sm">📸 Value 3</p>
-                      <p className="text-xs opacity-70">따뜻한 환대</p>
-                    </div>
+                  <div className="rounded-xl mb-6 h-48 overflow-hidden relative">
+                    <Image
+                      src="/images/hero/feature-nature.jpg"
+                      alt="Value 3"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <h3 className="text-xl korean-serif font-medium text-korean-accent mb-4">
                     따뜻한 환대
@@ -176,7 +192,7 @@ export default function Story() {
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
-                {[1, 2, 3, 4].map((i) => (
+                {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div key={i} className="calm-card rounded-2xl overflow-hidden">
                     <div className="relative h-80">
                       <Image
@@ -209,11 +225,14 @@ export default function Story() {
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="calm-card p-8 rounded-2xl">
-                  <div className="image-placeholder rounded-xl mb-6 h-64">
-                    <div className="text-center">
-                      <p className="text-sm">📸 Owner Portrait</p>
-                      <p className="text-xs opacity-70">대표/바리스타</p>
-                    </div>
+                  <div className="rounded-xl mb-6 h-96 overflow-hidden relative">
+                    <Image
+                      src="/images/hero/owner1.png"
+                      alt="Owner Portrait"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                   <h3 className="text-xl korean-serif font-medium text-korean-accent mb-2">
                     김바람 Kim Baram
@@ -230,11 +249,14 @@ export default function Story() {
                 </div>
 
                 <div className="calm-card p-8 rounded-2xl">
-                  <div className="image-placeholder rounded-xl mb-6 h-64">
-                    <div className="text-center">
-                      <p className="text-sm">📸 Baker Portrait</p>
-                      <p className="text-xs opacity-70">베이커</p>
-                    </div>
+                  <div className="rounded-xl mb-6 h-96 overflow-hidden relative">
+                    <Image
+                      src="/images/hero/owner2.png"
+                      alt="Baker Portrait"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                   <h3 className="text-xl korean-serif font-medium text-korean-accent mb-2">
                     이꽃님 Lee Kkotnim

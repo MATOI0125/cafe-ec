@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "@/components/CartContext";
+import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,10 +10,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "咖啡小屋 - 精品咖啡与美好时光",
-  description: "欢迎来到咖啡小屋，品味世界各地的精品咖啡，享受温馨舒适的空间。每一杯咖啡都是精心调制的艺术品。",
-  keywords: "咖啡, 精品咖啡, 咖啡店, 拿铁, 美式咖啡, 糕点",
-  authors: [{ name: "咖啡小屋" }],
+  title: "바람꽃 카페 - 스페셜티 커피와 따뜻한 시간",
+  description: "바람꽃 카페에 오신 것을 환영합니다. 세계 각지의 스페셜티 커피와 아늑한 공간을 경험하세요. 한 잔 한 잔 정성스럽게 내린 커피를 제공합니다.",
+  keywords: "카페, 스페셜티 커피, 커피숍, 라떼, 아메리카노, 디저트",
+  authors: [{ name: "바람꽃 카페" }],
 };
 
 export const viewport = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+  <html lang="ko">
       <body className={`${inter.variable} antialiased`}>
         <CartProvider>
           {children}

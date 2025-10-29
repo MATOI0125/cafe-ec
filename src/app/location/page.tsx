@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Location() {
   return (
@@ -29,19 +30,24 @@ export default function Location() {
                 <h2 className="text-2xl korean-serif font-medium text-korean-accent mb-6 text-center">
                   지도 / Map
                 </h2>
-                {/* 지도 플레이스홀더 */}
-                <div className="image-placeholder rounded-2xl h-96 mb-6">
-                  <div className="text-center">
-                    <p className="text-lg mb-2">🗺️ Interactive Map</p>
-                    <p className="text-sm opacity-70">카카오맵 또는 구글맵 embed</p>
-                    <p className="text-xs mt-2 opacity-50">전북 부안군 위치 표시</p>
-                  </div>
+                {/* Google Maps Embed */}
+                <div className="rounded-2xl overflow-hidden mb-6" style={{height: '384px'}}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.64038668681!2d126.54428639999999!3d35.587266899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35710942a6d1264b%3A0x8b7e245b0174733c!2z7Iqk7YWM7J20IOuzgOyCsOuwlOuejOq9gw!5e0!3m2!1sja!2sjp!4v1761745232943!5m2!1sja!2sjp"
+                    width="100%"
+                    height="384"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Google Map"
+                  ></iframe>
                 </div>
                 
                 {/* 주소 정보 */}
                 <div className="text-center korean-sans text-korean-light">
-                  <p className="text-lg font-medium mb-2">전북 부안군 변산면 바람꽃길 123</p>
-                  <p className="text-sm opacity-80 mb-4">123 Baramkkot-gil, Byeonsan-myeon, Buan-gun, Jeollabuk-do</p>
+                  <p className="text-lg font-medium mb-2">스테이 변산바람꽃</p>
+                  <p className="text-sm opacity-80 mb-4">６−７ Jakdang-gil, Jinseo-myeon, Buan-gun, Jeonbuk State</p>
                   <div className="flex justify-center space-x-4">
                     <button className="px-4 py-2 border border-korean-accent text-korean-accent hover:bg-korean-accent hover:text-white transition-all duration-300 rounded-full text-sm">
                       카카오맵으로 보기
@@ -114,33 +120,42 @@ export default function Location() {
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="image-placeholder rounded-2xl h-48 mb-4">
-                    <div className="text-center">
-                      <p className="text-lg mb-1">🏖️ 격포해수욕장</p>
-                      <p className="text-xs opacity-50">도보 15분</p>
-                    </div>
+                  <div className="relative rounded-2xl h-48 mb-4 overflow-hidden">
+                    <Image
+                      src="/images/hero/sea.jpg"
+                      alt="격포해수욕장"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <h4 className="korean-serif font-medium text-korean-accent mb-2">격포해수욕장</h4>
                   <p className="korean-sans text-sm text-korean-light opacity-80">아름다운 서해 일몰 명소 (도보 15분)</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="image-placeholder rounded-2xl h-48 mb-4">
-                    <div className="text-center">
-                      <p className="text-lg mb-1">🏔️ 내소사</p>
-                      <p className="text-xs opacity-50">차량 10분</p>
-                    </div>
+                  <div className="relative rounded-2xl h-48 mb-4 overflow-hidden">
+                    <Image
+                      src="/images/hero/mt.jpg"
+                      alt="내소사"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <h4 className="korean-serif font-medium text-korean-accent mb-2">내소사</h4>
                   <p className="korean-sans text-sm text-korean-light opacity-80">천년고찰과 단풍명소 (차량 10분)</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="image-placeholder rounded-2xl h-48 mb-4">
-                    <div className="text-center">
-                      <p className="text-lg mb-1">🌅 채석강</p>
-                      <p className="text-xs opacity-50">차량 20분</p>
-                    </div>
+                  <div className="relative rounded-2xl h-48 mb-4 overflow-hidden">
+                    <Image
+                      src="/images/hero/sea1.jpg"
+                      alt="채석강"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <h4 className="korean-serif font-medium text-korean-accent mb-2">채석강</h4>
                   <p className="korean-sans text-sm text-korean-light opacity-80">기암절벽과 일몰 절경 (차량 20분)</p>
@@ -157,7 +172,7 @@ export default function Location() {
                 <div>
                   <div className="text-3xl mb-3">📞</div>
                   <h4 className="font-medium mb-2">전화번호</h4>
-                  <p className="text-lg">063-123-4567</p>
+                  <p className="text-lg">+82 10-9584-1559</p>
                   <p className="text-sm opacity-80">운영시간 내 상담 가능</p>
                 </div>
                 <div>

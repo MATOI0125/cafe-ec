@@ -69,7 +69,7 @@ export default function ImageCarousel({
               alt={`Wind Flower Café ${index + 1}`}
               fill
               className="object-cover"
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               priority={index === 0}
               onLoad={() => index === 0 && setIsLoading(false)}
             />

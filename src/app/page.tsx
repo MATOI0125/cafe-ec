@@ -20,9 +20,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 korean-section-spacing">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="w-full">
             {/* 轮播图片区域 - 带文字覆盖层 */}
-            <div className="relative mb-12 gentle-fade-in">
+            <div className="relative mb-12 gentle-fade-in w-full">
               <ImageCarousel 
                 images={carouselImages}
                 interval={5000}
@@ -67,11 +67,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="calm-card p-8 rounded-2xl text-center">
-              <div className="image-placeholder rounded-xl mb-6 h-48">
-                <div className="text-center">
-                  <p className="text-sm">📸 Image</p>
-                  <p className="text-xs opacity-70">Coffee Making</p>
-                </div>
+              <div className="relative rounded-xl mb-6 h-48 overflow-hidden">
+                <Image
+                  src="/images/hero/feature-coffee.jpg"
+                  alt="Specialty Coffee"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <h3 className="text-xl korean-serif font-medium text-korean-accent mb-4">Specialty Coffee</h3>
               <p className="korean-sans text-korean-light leading-relaxed">
@@ -81,11 +84,14 @@ export default function Home() {
             </div>
 
             <div className="calm-card p-8 rounded-2xl text-center">
-              <div className="image-placeholder rounded-xl mb-6 h-48">
-                <div className="text-center">
-                  <p className="text-sm">📸 Image</p>
-                  <p className="text-xs opacity-70">Peaceful Space</p>
-                </div>
+              <div className="relative rounded-xl mb-6 h-48 overflow-hidden">
+                <Image
+                  src="/images/hero/feature-space.jpg"
+                  alt="Peaceful Space"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <h3 className="text-xl korean-serif font-medium text-korean-accent mb-4">Peaceful Space</h3>
               <p className="korean-sans text-korean-light leading-relaxed">
@@ -95,11 +101,14 @@ export default function Home() {
             </div>
 
             <div className="calm-card p-8 rounded-2xl text-center">
-              <div className="image-placeholder rounded-xl mb-6 h-48">
-                <div className="text-center">
-                  <p className="text-sm">📸 Image</p>
-                  <p className="text-xs opacity-70">Buan Nature</p>
-                </div>
+              <div className="relative rounded-xl mb-6 h-48 overflow-hidden">
+                <Image
+                  src="/images/hero/feature-nature.jpg"
+                  alt="Buan Nature"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <h3 className="text-xl korean-serif font-medium text-korean-accent mb-4">Buan Nature</h3>
               <p className="korean-sans text-korean-light leading-relaxed">
@@ -112,6 +121,35 @@ export default function Home() {
       </section>
 
       {/* Gallery Preview */}
+
+      {/* Contact Section */}
+      <section className="korean-section-spacing">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <h2 className="text-2xl md:text-3xl korean-serif font-light text-korean-accent mb-4">
+              연락처 <span className="text-korean-light">/</span> <span className="text-korean-accent">Contact</span>
+            </h2>
+            <div className="flex flex-col items-center space-y-4 text-korean-light text-lg">
+              <div className="flex items-center space-x-2">
+                <span className="text-2xl">📍</span>
+                <span>스테이 변산바람꽃</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-2xl">📍</span>
+                <span>６−７ Jakdang-gil, Jinseo-myeon, Buan-gun, Jeonbuk State</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-2xl">📞</span>
+                <span>+82 10-9584-1559</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-2xl">✉️</span>
+                <span>info@windflower.cafe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="korean-section-spacing">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -125,7 +163,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4].map((i) => (
+              {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div key={i} className="calm-card rounded-2xl overflow-hidden">
                   <div className="relative h-64">
                     <Image
@@ -135,18 +173,6 @@ export default function Home() {
                       className="object-cover hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                  </div>
-                </div>
-              ))}
-              
-              {/* 额外的占位符，为将来的图片预留 */}
-              {[5, 6].map((i) => (
-                <div key={i} className="calm-card rounded-2xl overflow-hidden">
-                  <div className="image-placeholder h-64">
-                    <div className="text-center">
-                      <p className="text-sm">📸 Image {i}</p>
-                      <p className="text-xs opacity-70">Gallery Photo</p>
-                    </div>
                   </div>
                 </div>
               ))}
@@ -177,8 +203,8 @@ export default function Home() {
                 <div key={i} className="calm-card rounded-xl overflow-hidden aspect-square">
                   <div className="relative h-full">
                     <Image
-                      src={`/images/gallery/FV${i}.png`}
-                      alt={`Wind Flower Café Gallery ${i}`}
+                      src={`/images/gallery/ins${i}.png`}
+                      alt={`Instagram Gallery ${i}`}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 50vw, 25vw"

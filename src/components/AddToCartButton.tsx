@@ -1,33 +1,38 @@
 'use client';
+import React, { useState } from 'react';
+import { useCart } from "@/context/CartContext";
 
-import { useCart } from "@/components/CartContext";
-
-interface AddToCartButtonProps {
+type Props = {
   item: {
-    name: string;
-    price: string;
-    image: string;
+    id: string;
+    name?: string;
+    price?: number;
+    image?: string;
+    [key: string]: any;
   };
-}
+  qty?: number;
+  className?: string;
+};
 
-export default function AddToCartButton({ item }: AddToCartButtonProps) {
+export default function AddToCartButton({ item, qty = 1, className = '' }: Props) {
   const { addItem } = useCart();
+  const [added, setAdded] = useState(false);
 
-  const handleAddToCart = () => {
-    addItem({
-      id: item.name.toLowerCase().replace(/\s+/g, '-'),
-      name: item.name,
-      price: item.price,
-      image: item.image,
-    });
+  const handle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    addItem({ id: item.id, name: item.name, price: item.price, image: item.image }, qty);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1200);
   };
 
   return (
-    <button 
-      onClick={handleAddToCart}
-      className="korean-button text-white px-4 py-2 rounded-full korean-sans font-medium text-sm hover:shadow-lg transition-all duration-300"
+    <button
+      type="button"
+      onClick={handle}
+      className={`${className} inline-flex items-center justify-center px-3 py-1 border rounded korean-sans text-sm`}
+      aria-label="Add to cart"
     >
-      담기
+      {added ? '추가됨' : '장바구니'}
     </button>
   );
 }
