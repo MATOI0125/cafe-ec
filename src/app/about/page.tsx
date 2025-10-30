@@ -27,7 +27,7 @@ export default function About() {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100">
       <Navigation />
 
-      <main className="container mx-auto px-4 py-16">
+      <main className="nav-offset container mx-auto px-4 pb-16">
         <div className="text-center mb-12 fade-in-up">
           <h1 className="text-4xl font-bold text-amber-900 mb-4 coffee-text-shadow">关于咖啡小屋</h1>
           <p className="text-xl text-amber-700">我们的故事和理念</p>

@@ -18,7 +18,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 korean-section-spacing">
+      <section className="nav-offset pb-16 korean-section-spacing">
         <div className="container mx-auto px-4">
           <div className="w-full">
             {/* 轮播图片区域 - 带文字覆盖层 */}

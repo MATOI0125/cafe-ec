@@ -15,6 +15,7 @@ type CartContextType = {
   removeItem: (id: string) => void;
   clear: () => void;
   count: number;
+  total: number;
 };
 
 const STORAGE_KEY = 'wf_cart_v1';
@@ -59,9 +60,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const clear = () => setItems([]);
 
   const count = items.reduce((s, it) => s + (it.quantity || 0), 0);
+  const total = items.reduce((s, it) => s + ((it.price || 0) * (it.quantity || 0)), 0);
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, clear, count }}>
+    <CartContext.Provider value={{ items, addItem, removeItem, clear, count, total }}>
       {children}
     </CartContext.Provider>
   );

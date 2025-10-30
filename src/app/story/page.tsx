@@ -8,7 +8,7 @@ export default function Story() {
     <div className="min-h-screen korean-calm">
       <Navigation />
 
-      <main className="pt-24 pb-16">
+      <main className="nav-offset pb-16">
         {/* Hero Section */}
         <section className="korean-section-spacing">
           <div className="container mx-auto px-4">

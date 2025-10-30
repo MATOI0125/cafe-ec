@@ -7,7 +7,7 @@ export default function Location() {
     <div className="min-h-screen korean-calm">
       <Navigation />
 
-      <div className="pt-24 pb-16 korean-section-spacing">
+      <div className="nav-offset pb-16 korean-section-spacing">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* 페이지 헤더 */}
@@ -33,6 +33,8 @@ export default function Location() {
                 {/* Google Maps Embed */}
                 <div className="rounded-2xl overflow-hidden mb-6" style={{height: '384px'}}>
                   <iframe
+                    id="google-maps-embed"
+                    name="google-maps-embed"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.64038668681!2d126.54428639999999!3d35.587266899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35710942a6d1264b%3A0x8b7e245b0174733c!2z7Iqk7YWM7J20IOuzgOyCsOuwlOuejOq9gw!5e0!3m2!1sja!2sjp!4v1761745232943!5m2!1sja!2sjp"
                     width="100%"
                     height="384"

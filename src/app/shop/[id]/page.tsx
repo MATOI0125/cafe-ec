@@ -83,7 +83,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
     return (
       <div className="min-h-screen korean-calm">
         <Navigation />
-        <main className="container mx-auto px-4 py-16 text-center">
+        <main className="nav-offset container mx-auto px-4 pb-16 text-center">
           <h1 className="text-2xl text-korean-accent mb-4">상품을 찾을 수 없습니다</h1>
           <button onClick={() => router.back()} className="korean-button px-6 py-2 text-white rounded-full">뒤로가기</button>
         </main>
@@ -95,7 +95,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
   return (
     <div className="min-h-screen korean-calm">
       <Navigation />
-      <main className="container mx-auto px-4 flex flex-col justify-center min-h-[70vh]">
+      <main className="nav-offset container mx-auto px-4 flex flex-col justify-center min-h-[70vh]">
         <div className="bg-white rounded-3xl shadow-lg p-8 grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
           {/* 商品图片 */}
           <div className="relative w-full aspect-[3/4] h-88 rounded-2xl overflow-hidden bg-korean-light/10">

@@ -37,7 +37,7 @@ export default function Shop() {
       <div className="min-h-screen korean-calm">
         <Navigation />
 
-        <main className="pt-24 pb-16">
+        <main className="nav-offset pb-16">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
               <div>
@@ -150,7 +150,7 @@ export default function Shop() {
 
                 {/* 商品网格 */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filtered.map(item => (
+                  {filtered.map((item, index) => (
                     <article key={item.id} className="korean-card p-4 rounded-lg hover:shadow-lg transition">
                       {/* 只把可导航区域放到 Link，避免把交互按钮包裹在链接内 */}
                       <Link href={`/shop/${item.id}`} className="block">
@@ -161,6 +161,7 @@ export default function Shop() {
                             fill
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority={index === 0} // 为第一个图片添加 priority
                           />
                         </div>
 

@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
 
 :root {
   --background: #fdfcf9;
@@ -148,9 +148,24 @@ body {
     padding: 5rem 0;
   }
   
+  /* 导航栏补偿 - 避免内容被遮挡 */
+  .nav-offset {
+    padding-top: 6rem; /* 96px */
+  }
+  
   @media (max-width: 768px) {
     .korean-section-spacing {
       padding: 3rem 0;
+    }
+    
+    .nav-offset {
+      padding-top: 7rem; /* 112px - 移动端需要更多空间 */
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .nav-offset {
+      padding-top: 8rem; /* 128px - 小屏设备需要更多空间 */
     }
   }
 }
